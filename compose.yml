@@ -4,7 +4,8 @@ services:
       context: ./app
     container_name: app
     volumes:
-      - ./app/src:/var/www/html
+      - ./app/src:/var/www/html/src
+      - ./app/vendor:/var/www/html/vendor
       - ./nginx/myconfig.ini:/usr/local/etc/php/conf.d/myconfig.ini
     networks:
       - app-network
