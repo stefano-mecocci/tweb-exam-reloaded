@@ -3,5 +3,9 @@
 {% block content %}
 <h1>Index page</h1>
 
-<pre>{{ user | json_encode() }}</pre>
+<ul>
+    {% for key, value in user %}
+    <li>{{ key }}: {{ value }}</li>
+    {% endfor %}
+</ul>
 {% endblock %}
