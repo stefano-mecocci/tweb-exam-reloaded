@@ -1,0 +1,53 @@
+form {
+    background-color: white;
+    margin: 0 auto;
+    border: 1px solid #b4b4b4;
+    box-sizing: border-box;
+    padding: 15px;
+    max-width: 370px;
+    width: 90%;
+}
+
+.form__title {
+    font-size: 28px;
+    text-align: center;
+    color: #5469d4;
+}
+
+.form__checkbox {
+    display: flex;
+    align-items: center;
+}
+
+.form__checkbox label {
+    margin-right: 10px;
+}
+
+.form__checkbox input {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.form__switch {
+    text-align: center;
+}
+
+.form__switch a {
+    margin-left: 5px;
+}
+
+#switchPassword {
+    position: absolute;
+    right: 11px;
+    top: 36px;
+    font-size: 25px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+@media screen and (max-width: 600px) {
+    form {
+        border: 0;
+    }
+}

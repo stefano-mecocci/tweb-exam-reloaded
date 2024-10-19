@@ -1,36 +1,60 @@
 <?php
 
-namespace App;
+$path = explode("/", $_SERVER["REQUEST_URI"]);
+$path = array_map(fn($p) => trim($p), $path);
+$path = array_filter($path, fn($p) => $p != "");
+$path = array_values($path);
 
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/models/UserRepo.php';
-
-$dotenv = \Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-$loader = new \Twig\Loader\FilesystemLoader('views');
-$twig = new \Twig\Environment($loader);
-$router = new \Bramus\Router\Router();
-
-function requireController(string $name)
-{
-  require __DIR__ . "/controllers/$name.php";
+if (count($path) == 0) {
+    $path[0] = "login";
 }
 
-$router->get('/register', function () use ($twig) {
-  requireController("register.page");
-});
+switch ($path[0]) {
+    case 'reset':
+        include "controller/reset_controller.php";
+        break;
 
-$router->get('/user/new', function () use ($twig) {
-  requireController("create_user.api");
-});
+    case 'shop':
+        include "controller/shop_controller.php";
+        break;
 
-$router->get('/', function () use ($twig) {
-  $userRepo = new Models\UserRepo();
+    case 'user':
+        include "controller/user_controller.php";
+        break;
 
-  $user = $userRepo->getBy('email', 'mario.rossi@gmail.com');
+    case 'login':
+        include "controller/login_controller.php";
+        break;
 
-  echo $twig->render('index.twig', ['user' => $user]);
-});
+    case 'cart':
+        include "controller/cart_controller.php";
+        break;
 
-$router->run();
+    case 'register':
+        include "controller/register_controller.php";
+        break;
+
+    case 'books':
+        include "controller/books_controller.php";
+        break;
+
+    case 'book':
+        include "controller/book_controller.php";
+        break;
+
+    case 'orders':
+        include "controller/orders_controller.php";
+        break;
+
+    case 'error':
+        include "controller/error_controller.php";
+        break;
+
+    case 'test':
+        include "test.php";
+        break;
+
+    default:
+        include "controller/404_controller.php";
+        break;
+}

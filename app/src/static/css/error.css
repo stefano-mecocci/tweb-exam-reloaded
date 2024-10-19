@@ -1,0 +1,24 @@
+main {
+    text-align: center;
+}
+
+.error__icon, 
+.error__title {
+    text-align: center;
+    display: block !important;
+    margin: 0 auto;
+}
+
+.error__icon {
+    color: #5469d4;
+    font-size: 90px;
+}
+
+.error__title {
+    margin: 20px auto 8px;
+    font-size: 28px;
+}
+
+.error__link { 
+    margin-top: 10px;
+}

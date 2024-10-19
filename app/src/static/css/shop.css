@@ -1,0 +1,134 @@
+.search {
+    margin-bottom: 30px;
+}
+
+.search__input {
+    font-size: 20px;
+    padding: 8px 12px;
+    width: 100%;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: 300px;
+    position: relative;
+    -webkit-box-shadow: 4px 3px 9px 2px #B8B8B8;
+    -moz-box-shadow: 4px 3px 9px 2px #B8B8B8;
+    box-shadow: 4px 3px 9px 2px #B8B8B8;
+    flex: 0 1 275px;
+    margin: 20px;
+    background: white;
+}
+
+.card__figure {
+    height: 200px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__figure img {
+    max-height: 170px;
+}
+
+.card__description {
+    background-color: #5469d4;
+    height: 100px;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.card__description span {
+    display: block;
+}
+
+.card__description__title {
+    max-width: 250px;
+    max-height: 23px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.card__description__title a {
+    color: white;
+}
+
+.card__description__price {
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.card__description__mark {
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.card__id {
+    display: none;
+}
+
+.cart {
+    background-color: #5469d4;
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-align: center;
+}
+
+.cart i.fas {
+    font-size: 50px;
+    padding: 24px 20px;
+}
+
+.card__drag-area {
+    position: absolute;
+    background-color: #5469d4;
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+    z-index: 999;
+    cursor: move;
+    right: 0;
+    top: 0;
+}
+
+.card__drag-area:hover {
+    background-color: #4454a6;
+}
+
+.card.is-dragging {
+    position: fixed;
+    z-index: 999;
+    width: 275px;
+    cursor: move;
+    outline: 4px solid #5469d4;
+}
+
+.is-hovering-cart:hover {
+    outline: 6px solid #262f5c;
+}
+
+.cart.is-dragging i.fas {
+    font-size: 80px;
+    padding: 36px 30px;
+}
+
+@media screen and (max-width: 970px) {
+    .cards {
+        justify-content: center;
+    }
+    .card__drag-area {
+        display: none;
+    }
+    .cart {
+        display: none;
+    }
+}

@@ -1,0 +1,3 @@
+-- fake data to test the app
+-- due clienti e un venditore
+-- meglio farli sul momento??

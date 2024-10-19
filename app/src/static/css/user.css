@@ -1,0 +1,29 @@
+.user__picture {
+    max-width: 250px;
+    width: 100%;
+    max-height: 250px;
+    margin: 0 auto;
+}
+
+.user__picture img {
+    max-width: 100%;
+}
+
+.user__name {
+    text-align: center;
+    font-size: 26px;
+    margin-top: 5px;
+}
+
+.user__info {
+    max-width: 700px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 600px) {
+    .user__picture {
+        max-width: 190px;
+        max-height: 190px;
+    }
+}

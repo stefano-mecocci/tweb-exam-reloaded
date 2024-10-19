@@ -1,0 +1,11 @@
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 300px;
+}
+
+.payment-form p {
+    margin: 0;
+}
