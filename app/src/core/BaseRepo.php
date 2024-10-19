@@ -60,7 +60,7 @@ class BaseRepo
         if ($this->stmt->execute()) {
             return $this->stmt->fetch(\PDO::FETCH_ASSOC);
         } else {
-            return null;
+            return false;
         }
     }
 }
