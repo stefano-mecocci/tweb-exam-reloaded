@@ -1,10 +1,10 @@
 USE appdb;
 
--- two roles: customer = 0 and seller = 1
+-- tabella utenti, 2 ruoli: cliente e venditore
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(300) UNIQUE NOT NULL,
-    password_hash VARCHAR(300) NOT NULL,
+    password VARCHAR(300) NOT NULL,
     first_name VARCHAR(300) NOT NULL,
     last_name VARCHAR(300) NOT NULL,
     address VARCHAR(300) NOT NULL,
@@ -13,8 +13,8 @@ CREATE TABLE users (
     answer VARCHAR(300) NOT NULL
 );
 
--- a seller can publish more books but a book
--- belongs to only one seller
+-- tabella libri, un venditore può pubblicare più libri ma
+-- un libro appartiene ad un solo venditore
 CREATE TABLE books (
     id INT PRIMARY KEY AUTO_INCREMENT,
     title VARCHAR(300) NOT NULL UNIQUE,
@@ -28,8 +28,8 @@ CREATE TABLE books (
     FOREIGN KEY (seller_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
--- a user can write more reviews but a review
--- belongs to only one user
+-- un utente pubblica più recensioni ma una
+-- recensione appartiene ad un solo utente
 CREATE TABLE reviews (
     id INT PRIMARY KEY AUTO_INCREMENT,
     body TEXT NOT NULL,
@@ -50,8 +50,6 @@ CREATE TABLE cards (
     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
--- carts of users, where to each user is associated
--- a list of books with their quantities
 CREATE TABLE carts (
     id INT PRIMARY KEY AUTO_INCREMENT,
     quantity INT NOT NULL,
