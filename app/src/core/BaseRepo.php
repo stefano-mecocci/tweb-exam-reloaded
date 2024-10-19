@@ -36,7 +36,8 @@ class BaseRepo
         try {
             return $this->stmt->execute();
         } catch (\PDOException $e) {
-            header("Location: /error");
+            var_dump($e);
+            // header("Location: /error");
         }
     }
 
@@ -59,7 +60,7 @@ class BaseRepo
         if ($this->stmt->execute()) {
             return $this->stmt->fetch(\PDO::FETCH_ASSOC);
         } else {
-            return false;
+            return null;
         }
     }
 }
